@@ -2,5 +2,15 @@
 
 <p><%= @article.body %></p>
 <ul>
-  <li><%= link_to "Qateni tuze", edit_article_path(@article) %></li>
+  <li><%= link_to "Qateni tuzeu", edit_article_path(@article) %></li>
+   <li><%= link_to "Zhoyu", article_path(@article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Senimdisiz be?"
+                  } %></li>
 </ul>
+
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
